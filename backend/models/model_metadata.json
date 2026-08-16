@@ -1,0 +1,113 @@
+{
+  "best_model": "ExtraTrees",
+  "trained_on_rows": 758,
+  "features": {
+    "numeric": [
+      "price_inr",
+      "rating_score",
+      "core_count",
+      "clock_speed_ghz",
+      "ram_gb",
+      "storage_gb",
+      "display_inches",
+      "refresh_rate_hz",
+      "battery_mah",
+      "rear_camera_count",
+      "front_camera_count",
+      "rear_camera_main_mp",
+      "front_camera_main_mp",
+      "total_pixels",
+      "pixels_per_inch",
+      "battery_per_inch",
+      "ram_per_core",
+      "performance_score"
+    ],
+    "boolean": [
+      "has_5g",
+      "has_nfc",
+      "has_ir_blaster",
+      "fast_charging",
+      "memory_card_supported"
+    ],
+    "categorical": [
+      "smartphone_brand",
+      "processor_brand",
+      "os_name",
+      "device_tier"
+    ]
+  },
+  "validation_comparison": [
+    {
+      "Model": "MeanBaseline",
+      "MAE": 23.099,
+      "RMSE": 29.458,
+      "R2": -0.0237,
+      "MedianAE": 23.0,
+      "TrainTime_s": 0.012,
+      "PredictTime_ms_per_row": 0.06
+    },
+    {
+      "Model": "LinearRegression",
+      "MAE": 11.588,
+      "RMSE": 14.605,
+      "R2": 0.7484,
+      "MedianAE": 9.867,
+      "TrainTime_s": 0.014,
+      "PredictTime_ms_per_row": 0.0518
+    },
+    {
+      "Model": "Ridge",
+      "MAE": 11.61,
+      "RMSE": 14.484,
+      "R2": 0.7525,
+      "MedianAE": 9.823,
+      "TrainTime_s": 0.011,
+      "PredictTime_ms_per_row": 0.058
+    },
+    {
+      "Model": "RandomForest",
+      "MAE": 9.328,
+      "RMSE": 13.287,
+      "R2": 0.7917,
+      "MedianAE": 6.317,
+      "TrainTime_s": 0.834,
+      "PredictTime_ms_per_row": 0.2442
+    },
+    {
+      "Model": "ExtraTrees",
+      "MAE": 9.103,
+      "RMSE": 13.56,
+      "R2": 0.7831,
+      "MedianAE": 6.283,
+      "TrainTime_s": 0.637,
+      "PredictTime_ms_per_row": 0.2316
+    },
+    {
+      "Model": "GradientBoosting",
+      "MAE": 9.97,
+      "RMSE": 13.375,
+      "R2": 0.7889,
+      "MedianAE": 7.691,
+      "TrainTime_s": 0.298,
+      "PredictTime_ms_per_row": 0.0609
+    },
+    {
+      "Model": "HistGradientBoosting",
+      "MAE": 10.05,
+      "RMSE": 14.262,
+      "R2": 0.76,
+      "MedianAE": 7.419,
+      "TrainTime_s": 0.306,
+      "PredictTime_ms_per_row": 0.1003
+    }
+  ],
+  "test_metrics": {
+    "MAE": 6.0606206063223595,
+    "RMSE": 10.038990888056583,
+    "R2": 0.8701835477733475,
+    "MedianAE": 1.8433333333333266
+  },
+  "random_state": 42,
+  "target": "charging_watt",
+  "sklearn_pipeline_includes_preprocessing": true
+}
