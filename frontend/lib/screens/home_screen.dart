@@ -80,7 +80,7 @@ class _HomeScreenState extends State<HomeScreen> {
     final uid = _user?.uid;
     if (uid == null) return;
     Navigator.of(context).push(
-      MaterialPageRoute(builder: (_) => HistoryScreen(uid: uid)),
+      MaterialPageRoute(builder: (_) => const HistoryScreen()),
     );
   }
 
@@ -125,7 +125,7 @@ class _HomeScreenState extends State<HomeScreen> {
           width: 32,
           height: 32,
           decoration: BoxDecoration(color: AppColors.primary, borderRadius: BorderRadius.circular(9)),
-          child: const Icon(Icons.bolt_rounded, color: Colors.white, size: 20),
+          child: const Icon(Icons.bolt_rounded, color: AppColors.textPrimary, size: 20),
         ),
         const SizedBox(width: 10),
         const Text(
@@ -148,15 +148,15 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget _header() {
-    return Column(
+    return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text(
+        Text(
           "Maximum charging wattage",
           style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600, color: AppColors.textPrimary),
         ),
-        const SizedBox(height: 8),
-        const Text(
+        SizedBox(height: 8),
+        Text(
           "Enter a phone's brand and model to look it up. If it's not in the "
           "known database, add whatever specs you have and we'll estimate it.",
           style: TextStyle(fontSize: 14.5, color: AppColors.textSecondary, height: 1.5),

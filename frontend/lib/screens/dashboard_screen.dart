@@ -70,8 +70,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
               child: Row(
                 children: [
                   // Logo (text-based to keep asset-free)
-                  Row(
-                    children: const [
+                  const Row(
+                    children: [
                       Icon(Icons.bolt_rounded, color: AppColors.primary),
                       SizedBox(width: 8),
                       Text("Tecron", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700, color: AppColors.textPrimary)),

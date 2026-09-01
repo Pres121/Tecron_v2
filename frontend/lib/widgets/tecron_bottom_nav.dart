@@ -46,17 +46,20 @@ class TecronBottomNav extends StatelessWidget {
               return Stack(
                 alignment: Alignment.centerLeft,
                 children: [
+                  // Sliding pill indicator that animates smoothly between items
                   AnimatedPositioned(
-                    duration: const Duration(milliseconds: 320),
-                    curve: Curves.easeOutCubic,
+                    duration: const Duration(milliseconds: 420),
+                    curve: Curves.easeOutQuart,
                     left: itemWidth * currentIndex,
                     width: itemWidth,
                     top: 8,
                     bottom: 8,
-                    child: Container(
+                    child: AnimatedContainer(
+                      duration: const Duration(milliseconds: 380),
                       decoration: BoxDecoration(
                         color: AppColors.primarySoft,
                         borderRadius: BorderRadius.circular(16),
+                        boxShadow: [BoxShadow(color: Colors.black.withAlpha(8), blurRadius: 12, offset: const Offset(0, 6))],
                       ),
                     ),
                   ),
@@ -78,11 +81,12 @@ class TecronBottomNav extends StatelessWidget {
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                AnimatedScale(
-                                  duration: const Duration(milliseconds: 220),
-                                  scale: selected ? 1.08 : 1.0,
+                                AnimatedSwitcher(
+                                  duration: const Duration(milliseconds: 260),
+                                  transitionBuilder: (child, anim) => ScaleTransition(scale: anim, child: child),
                                   child: Icon(
                                     selected ? item.activeIcon : item.icon,
+                                    key: ValueKey<bool>(selected),
                                     size: 22,
                                     color: selected ? AppColors.primary : AppColors.textFaint,
                                   ),

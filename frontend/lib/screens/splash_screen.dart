@@ -5,6 +5,7 @@ import "package:flutter/material.dart";
 import "../services/app_state.dart";
 import "auth_screen.dart";
 import "dashboard_screen.dart";
+import "../theme/app_theme.dart";
 
 /// Premium splash screen with animated background, hero illustration,
 /// and Apple/Tesla-inspired design language.
@@ -288,7 +289,7 @@ class _SplashScreenState extends State<SplashScreen>
           ),
           child: const Icon(
             Icons.bolt_rounded,
-            color: Colors.white,
+            color: AppColors.textPrimary,
             size: 22,
           ),
         ),
@@ -299,7 +300,7 @@ class _SplashScreenState extends State<SplashScreen>
             fontSize: 15,
             fontWeight: FontWeight.w800,
             letterSpacing: 2.5,
-            color: Colors.white.withValues(alpha: 0.9),
+            color: AppColors.textPrimary.withValues(alpha: 0.9),
           ),
         ),
       ],
@@ -366,7 +367,7 @@ class _SplashScreenState extends State<SplashScreen>
             Icon(
               Icons.battery_charging_full_rounded,
               size: 64,
-              color: Colors.white.withValues(alpha: 0.95),
+              color: AppColors.textPrimary.withValues(alpha: 0.95),
             ),
           ],
         ),
@@ -386,7 +387,7 @@ class _SplashScreenState extends State<SplashScreen>
             fontWeight: FontWeight.w800,
             height: 1.15,
             letterSpacing: -0.8,
-            color: Colors.white,
+            color: AppColors.textPrimary,
           ),
         ),
 
@@ -395,12 +396,12 @@ class _SplashScreenState extends State<SplashScreen>
         // Subtitle
         const Text(
           "Predict your phone's maximum charging power using verified device data and intelligent AI estimation.",
-          style: TextStyle(
-            fontSize: 14.5,
-            height: 1.6,
-            color: Color(0xFFB8C1CC),
-            letterSpacing: 0.2,
-          ),
+                        style: TextStyle(
+                            fontSize: 14.5,
+                            height: 1.6,
+                            color: AppColors.textSecondary,
+                            letterSpacing: 0.2,
+                          ),
         ),
 
         const SizedBox(height: 24),
@@ -487,7 +488,7 @@ class _SplashScreenState extends State<SplashScreen>
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w700,
-                            color: Colors.white,
+                            color: AppColors.textPrimary,
                             letterSpacing: 0.3,
                           ),
                         ),
@@ -495,13 +496,13 @@ class _SplashScreenState extends State<SplashScreen>
                         Container(
                           padding: const EdgeInsets.all(6),
                           decoration: BoxDecoration(
-                            color: Colors.white.withValues(alpha: 0.2),
+                            color: AppColors.textPrimary.withValues(alpha: 0.2),
                             borderRadius: BorderRadius.circular(8),
                           ),
                           child: const Icon(
                             Icons.arrow_forward_rounded,
                             size: 18,
-                            color: Colors.white,
+                            color: AppColors.textPrimary,
                           ),
                         ),
                       ],

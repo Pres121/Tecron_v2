@@ -141,7 +141,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     ? const SizedBox(
                         height: 18,
                         width: 18,
-                        child: CircularProgressIndicator(strokeWidth: 2.2, color: Colors.white),
+                        child: CircularProgressIndicator(strokeWidth: 2.2, color: AppColors.textPrimary),
                       )
                     : const Text("Save changes"),
               ),

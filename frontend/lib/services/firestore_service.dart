@@ -26,6 +26,22 @@ class FirestoreService {
     await _predictionsRef(uid).add(entry.toMap());
   }
 
+  /// Returns the user's current saved charging limit, if one exists.
+  Future<PredictionHistoryEntry?> getLatestPrediction(String uid) async {
+    final snapshot = await _predictionsRef(uid)
+        .orderBy("created_at", descending: true)
+        .limit(1)
+        .get();
+    if (snapshot.docs.isEmpty) return null;
+    return PredictionHistoryEntry.fromDoc(snapshot.docs.first);
+  }
+
+  /// Replaces the current saved charging limit while preserving its document
+  /// identity, so a repeat prediction does not create a duplicate entry.
+  Future<void> replacePrediction(String uid, String entryId, PredictionHistoryEntry entry) async {
+    await _predictionsRef(uid).doc(entryId).set(entry.toMap());
+  }
+
   /// Live stream of a user's most recent predictions, newest first.
   Stream<List<PredictionHistoryEntry>> watchHistory(String uid, {int limit = 50}) {
     return _predictionsRef(uid)

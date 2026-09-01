@@ -119,9 +119,13 @@ class _PhoneFormState extends State<PhoneForm> {
                         child: const Icon(Icons.chevron_right_rounded, size: 18, color: AppColors.primary),
                       ),
                       const SizedBox(width: 4),
-                      const Text(
-                        "Add specs (helps if the phone isn't in the database)",
-                        style: TextStyle(fontSize: 13.5, color: AppColors.primaryDark, fontWeight: FontWeight.w500),
+                      const Expanded(
+                        child: Text(
+                          "Add specs (helps if the phone isn't in the database)",
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(fontSize: 13.5, color: AppColors.primaryDark, fontWeight: FontWeight.w500),
+                        ),
                       ),
                     ],
                   ),
@@ -140,7 +144,7 @@ class _PhoneFormState extends State<PhoneForm> {
                     ? const SizedBox(
                         height: 18,
                         width: 18,
-                        child: CircularProgressIndicator(strokeWidth: 2.2, color: Colors.white),
+                        child: CircularProgressIndicator(strokeWidth: 2.2, color: AppColors.textPrimary),
                       )
                     : const Text("Predict charging power"),
               ),
